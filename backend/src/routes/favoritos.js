@@ -29,6 +29,31 @@ router.get('/', (req, res) => {
   }
 });
 
+// GET - Verificar se livro é favorito do usuário
+router.get('/verificar', (req, res) => {
+  try {
+    const { livroId, usuario } = req.query;
+    
+    if (!livroId || !usuario) {
+      return res.status(400).json({ 
+        erro: 'livroId e usuario são obrigatórios' 
+      });
+    }
+
+    const favoritos = getFavoritos();
+    const ehFavorito = favoritos.some(f => 
+      f.livroId === parseInt(livroId) && f.usuario === usuario
+    );
+
+    res.json({ ehFavorito });
+    
+  } catch (erro) {
+    res.status(500).json({ 
+      erro: 'Erro ao verificar favorito'
+    });
+  }
+});
+
 // POST - Adicionar ou remover favorito
 router.post('/', (req, res) => {
   try {

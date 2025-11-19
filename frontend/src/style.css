@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #1a365d, #2d3748);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.2em;
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 1.1em;
+}
+
+.abas {
+    display: flex;
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.aba {
+    flex: 1;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    color: #4a5568;
+    border-bottom: 3px solid transparent;
+}
+
+.aba.ativa {
+    color: #2b6cb0;
+    border-bottom-color: #2b6cb0;
+    background: #f7fafc;
+}
+
+.aba:hover:not(.ativa) {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+.conteudo {
+    padding: 30px;
+    min-height: 600px;
+}
+
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo.ativa {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #2d3748;
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+
+.busca-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+#campo-busca {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+#campo-busca:focus {
+    outline: none;
+    border-color: #4299e1;
+}
+
+.botao {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.botao.buscar {
+    background: #3182ce;
+    color: white;
+}
+
+.botao.emprestar {
+    background: #38a169;
+    color: white;
+}
+
+.botao.devolver {
+    background: #e53e3e;
+    color: white;
+}
+
+.botao.favorito {
+    background: #805ad5;
+    color: white;
+}
+
+.botao.detalhes {
+    background: #718096;
+    color: white;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.botao.buscar:hover { background: #2b6cb0; }
+.botao.emprestar:hover { background: #2f855a; }
+.botao.devolver:hover { background: #c53030; }
+.botao.favorito:hover { background: #6b46c1; }
+.botao.detalhes:hover { background: #4a5568; }
+
+.grid-livros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.card-livro {
+    background: white;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.card-livro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.capa-container {
+    height: 200px;
+    overflow: hidden;
+    background: #f7fafc;
+}
+
+.card-livro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-livro:hover img {
+    transform: scale(1.05);
+}
+
+.conteudo-card {
+    padding: 20px;
+}
+
+.card-livro h3 {
+    color: #2d3748;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.card-livro .autor {
+    color: #718096;
+    margin-bottom: 12px;
+    font-size: 0.95em;
+}
+
+.card-livro .sinopse {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.info-extra {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.85em;
+    color: #718096;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.status.disponivel {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.status.emprestado {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.botoes-acao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.botoes-acao .botao {
+    padding: 10px 8px;
+    font-size: 0.8em;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.indisponivel {
+    opacity: 0.8;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-conteudo {
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-cabecalho {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-corpo {
+    padding: 20px;
+}
+
+.fechar-modal {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #718096;
+}
+
+.loading {
+    text-align: center;
+    color: #718096;
+    font-style: italic;
+    padding: 40px;
+}
+
+.erro {
+    background: #fed7d7;
+    color: #742a2a;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 10px 0;
+    border-left: 4px solid #e53e3e;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .abas {
+        flex-direction: column;
+    }
+    
+    .grid-livros {
+        grid-template-columns: 1fr;
+    }
+    
+    .busca-container {
+        flex-direction: column;
+    }
+    
+    .info-extra {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .botoes-acao {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    .botoes-acao .botao {
+        font-size: 0.75em;
+        padding: 8px 4px;
+    }
+}

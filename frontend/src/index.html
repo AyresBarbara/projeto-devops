@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📚 Biblioteca Digital</h1>
+            <p>Sistema de gerenciamento de livros</p>
+        </header>
+
+        <nav class="abas">
+            <button class="aba ativa" data-aba="catalogo">Catálogo</button>
+            <button class="aba" data-aba="buscar">Buscar Livros</button>
+            <button class="aba" data-aba="emprestimos">Meus Empréstimos</button>
+            <button class="aba" data-aba="favoritos">Favoritos</button>
+        </nav>
+
+        <main class="conteudo">
+            
+            <section id="catalogo" class="aba-conteudo ativa">
+                <h2>Catálogo de Livros</h2>
+                <div id="lista-livros" class="grid-livros"></div>
+            </section>
+
+            <section id="buscar" class="aba-conteudo">
+                <h2>Buscar Livros</h2>
+                <div class="busca-container">
+                    <input type="text" id="campo-busca" placeholder="Digite título ou autor...">
+                    <button onclick="buscarLivros()" class="botao buscar">🔍 Buscar</button>
+                </div>
+                <div id="resultados-busca" class="grid-livros"></div>
+            </section>
+
+            <section id="emprestimos" class="aba-conteudo">
+                <h2>Meus Empréstimos</h2>
+                <div id="lista-emprestimos"></div>
+            </section>
+
+            <section id="favoritos" class="aba-conteudo">
+                <h2>Meus Favoritos</h2>
+                <div id="lista-favoritos" class="grid-livros"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="emprestimos.js"></script>
+    <script src="favoritos.js"></script>
+</body>
+</html>
