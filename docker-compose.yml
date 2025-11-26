@@ -1,19 +1,44 @@
 version: '3.8'
 
 services:
+  # Backend
   backend:
     build: ./backend
     ports:
       - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://usuario:senha@database:5432/biblioteca
+    depends_on:
+      - database
     networks:
       - app-network
 
+  # Frontend
   frontend:
     build: ./frontend
     ports:
       - "80:80"
     networks:
       - app-network
+
+  # Database
+  database:
+    image: postgres:13
+    container_name: projeto-devops-db
+    environment:
+      POSTGRES_DB: biblioteca
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: senha
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
 
 networks:
   app-network:
