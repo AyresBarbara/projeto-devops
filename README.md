@@ -169,7 +169,7 @@ git merge staging
 
 -**Barbara Ayres** - [GitHub](https://github.com/AyresBarbara)  
 -**Gustavo Andrew** - [GitHub](https://github.com/ineviTavinho)  
--**Isllâne** - [GitHub](https://github.com/isllane07)  
+-**Isllâne Maria** - [GitHub](https://github.com/isllane07)  
 -**João Carneiro** - [GitHub](https://github.com/Jotta2k4)  
 -**Pedro Sales** - [GitHub](https://github.com/Salesdv)  
 -**Silas Rafael** - [GitHub](https://github.com/SilasAlbuquerque001)  
