@@ -7,7 +7,7 @@
       "isbn": "9788544001820",
       "capa": "",
       "descricao": "Romance clássico da literatura brasileira",
-      "disponivel": false,
+      "disponivel": true,
       "ano": "1899",
       "paginas": 256,
       "editora": "Editora Garnier",
@@ -16,36 +16,10 @@
     {
       "id": 2,
       "titulo": "Harry Potter",
-      "autor": "S. Gunelius",
-      "isbn": "9780230594104",
-      "capa": "https://books.google.com/books/content?id=abYKXvCwEToC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "descricao": "The Harry Potter books are the bestselling books of all time. In this fascinating study, Susan Gunelius analyzes every aspect of the brand phenomenon that is Harry Potter. Delving into price wars, box office revenue, and brand values, amongst other things, this is the story of the most incredible brand success there has ever been.",
-      "disponivel": false,
-      "ano": "N/A",
-      "paginas": 0,
-      "editora": "Editora não informada",
-      "idioma": "pt"
-    },
-    {
-      "id": 3,
-      "titulo": "Harry Potter",
       "autor": "Autor desconhecido",
       "isbn": "",
       "capa": "https://books.google.com/books/content?id=n3vng7gyGCYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "descricao": "Descrição não disponível para este livro.",
-      "disponivel": true,
-      "ano": "N/A",
-      "paginas": 0,
-      "editora": "Editora não informada",
-      "idioma": "pt"
-    },
-    {
-      "id": 4,
-      "titulo": "Ana's Girls",
-      "autor": "Eda R. Uca",
-      "isbn": "1418437956",
-      "capa": "https://books.google.com/books/content?id=jgtXMKlWhN8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      "descricao": "This groundbreaking book is the only honest, balanced and complete introduction to the frightening online eating disorder underground. Explore a world that no one wants to believe exists: learn the secret code words, debunk the myths (find out why thousands of young girls are really flooding these sites) and read hundreds of anonymous rants, declarations of commitment and pleas for help from Ana's girls. This book does not promote eating disorders. It exposes the undeniable fact that thousands of young people are struggling in isolation with very real, life threatening disorders and we, as a society have not been able to help them. If we ignore this information, we choose to ignore their cry and lose the opportunity to gain potent insight into their world. Ana's girls are our children, our sisters, our spouses, our patients and our students; they are represented in every class and race. No community is sheltered from this pain. No community is complete without their health. Let us take the first step towards becoming whole by hearing their cry.",
       "disponivel": true,
       "ano": "N/A",
       "paginas": 0,
@@ -59,21 +33,22 @@
       "livroId": 1,
       "usuario": "João Silva",
       "dataEmprestimo": "2025-11-19",
-      "dataDevolucao": null
+      "dataDevolucao": "2025-11-19"
     },
     {
       "id": 2,
       "livroId": 2,
       "usuario": "João Silva",
       "dataEmprestimo": "2025-11-19",
-      "dataDevolucao": null
+      "dataDevolucao": "2025-11-19"
+    },
+    {
+      "id": 3,
+      "livroId": 1,
+      "usuario": "João Silva",
+      "dataEmprestimo": "2025-11-19",
+      "dataDevolucao": "2025-11-19"
     }
   ],
-  "favoritos": [
-    {
-      "id": 1,
-      "livroId": 1,
-      "usuario": "João Silva"
-    }
-  ]
+  "favoritos": []
 }
