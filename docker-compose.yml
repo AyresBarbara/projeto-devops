@@ -37,6 +37,58 @@ services:
     networks:
       - app-network
 
+  # Zabbix Server
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql:alpine-6.4-latest
+    container_name: zabbix-server
+    restart: unless-stopped
+    ports:
+      - "10051:10051"
+    environment:
+      - DB_SERVER_HOST=database
+      - POSTGRES_USER=usuario
+      - POSTGRES_PASSWORD=senha
+      - POSTGRES_DB=zabbix
+    depends_on:
+      - database
+    networks:
+      - app-network
+
+  # Zabbix Web Interface
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-pgsql:alpine-6.4-latest
+    container_name: zabbix-web
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - ZBX_SERVER_HOST=zabbix-server
+      - DB_SERVER_HOST=database
+      - POSTGRES_USER=usuario
+      - POSTGRES_PASSWORD=senha
+      - POSTGRES_DB=zabbix
+      - PHP_TZ=America/Sao_Paulo
+    depends_on:
+      - database
+      - zabbix-server
+    networks:
+      - app-network
+
+  # Zabbix Agent
+  zabbix-agent:
+    image: zabbix/zabbix-agent2:alpine-6.4-latest
+    container_name: zabbix-agent
+    restart: unless-stopped
+    ports:
+      - "10050:10050"
+    environment:
+      - ZBX_HOSTNAME=zabbix-agent
+      - ZBX_SERVER_HOST=zabbix-server
+    depends_on:
+      - zabbix-server
+    networks:
+      - app-network
+
 volumes:
   postgres_data:
 
