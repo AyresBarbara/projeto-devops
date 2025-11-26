@@ -1,0 +1,78 @@
+{
+  "info": {
+    "name": "API Biblioteca Digital - Projeto DevOps",
+    "description": "## 📚 Collection para testes da API\n\nEsta collection testa todas as rotas da API Biblioteca Digital desenvolvida para o projeto de DevOps.\n\n### 🚀 Rotas disponíveis:\n- `GET /api/livros` - Lista todos os livros\n- `POST /api/livros` - Adiciona novo livro\n- `DELETE /api/livros/:id` - Remove livro por ID\n- `GET /api/health` - Health check da API\n\n### 🔧 Configuração:\n- **Base URL**: `http://localhost:3000`\n- **Content-Type**: `application/json`",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Livros",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/livros",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Adicionar Livro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"O Pequeno Príncipe\",\n  \"autor\": \"Antoine de Saint-Exupéry\",\n  \"isbn\": \"9788572328522\",\n  \"descricao\": \"Um piloto cai no deserto e conhece um pequeno príncipe.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/livros",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Remover Livro",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/livros/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros", "1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
